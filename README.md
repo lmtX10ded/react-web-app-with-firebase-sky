@@ -1,4 +1,4 @@
-- Demo: http://lmtX10ded.github.io/react-app-bronze
+- Demo: http://lmtX10ded.github.io/react-web-app-with-firebase-sky
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
