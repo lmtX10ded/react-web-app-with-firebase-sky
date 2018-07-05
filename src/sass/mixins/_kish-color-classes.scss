@@ -1,0 +1,14 @@
+/*
+This mixins produces classes each color in $colors from variables,
+*/
+
+@mixin kish-color-classes($class-slug, $prop){
+    @each $name, $value in $colors-kish 
+    {
+      .#{$class-slug}-#{str_slice( $name, 7)} 
+            {
+              #{$prop}: $value!important;
+            } 
+
+    }
+}

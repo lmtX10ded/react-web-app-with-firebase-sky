@@ -8,4 +8,6 @@ import firebase from 'firebase'
     messagingSenderId: "936597362512"
   };
   firebase.initializeApp(config);
-export default firebase;
+  // export const provider = new firebase.auth.GoogleAuthProvider();
+  // export const auth = firebase.auth();
+  export default firebase;

@@ -1,0 +1,33 @@
+//w- h- mw- mh- classes with breakpoints m-xsm-10
+@each $breakpoint in map-keys($kish-grid-breakpoints) {
+  @include kish-media-breakpoint-up($breakpoint) {
+    
+    $counter-start:0;
+    $counter-stop:20; //20 goes till 100%.
+    $counter-increment:5;
+
+    @for $i from $counter-start through $counter-stop{ 
+    
+    $infix: kish-breakpoint-infix($breakpoint, $kish-grid-breakpoints);
+        //------------------------------------------------
+          @each $prop, $abbrev in (width: w, height: h ) {
+            .#{$abbrev}-#{$counter-start}#{$infix}
+            {
+              #{$prop}: #{$counter-start}% !important; 
+            }
+          }
+      
+        //------------------------------------------------
+      
+          @each $prop, $abbrev in (max-width: mw, max-height: mh){
+            .#{$abbrev}-#{$counter-start}#{$infix}
+            {
+              #{$prop}: #{$counter-start}% !important; 
+            }
+          }
+  
+    $counter-start : $counter-start + $counter-increment;
+    }
+
+  }
+}

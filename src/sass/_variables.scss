@@ -1,0 +1,169 @@
+//note: use font sizing in rem and everything else in %
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+
+//Bootstrap variable
+$grid-gutter-width: 0px;
+$border-width: 1px;
+/*------------------
+Color names
+--------------------*/
+
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+// custom theme
+$color-theme: #143253;
+
+// red theme
+$color-red-dark:#b20000;
+$color-red: #ED2924;
+$color-red-light:#ff4c4c;
+$color-red-lighter:#ff7f7f;
+$color-red-lightest:#ffb2b2;
+
+//social network icon colors
+$color-facebook: #3B59A2;
+$color-twitter:#00aced;
+$color-googleplus:#dd4b39;
+$color-linkedin:#007bb6;
+$color-youtube:#bb0000;
+$color-instagram:#517fa4;
+$color-pinterest:#cb2027;
+$color-flickr:#ff0084;
+$color-tumblr:#32506d;
+$color-foursquare:#0072b1;
+$color-dribbble:#ea4c89;
+$color-vine:#00bf8f;
+$color-behance:#1769FF;
+$color-github:#171516;
+$color-skype:#00AFF0;
+$color-snapchat:#FFFA37;
+$color-whatsapp:#64D448;
+
+// grayscale theme
+$color-gray-dark:#333333;
+$color-gray:#555555;
+$color-gray-light:#777777;
+$color-gray-lighter:#999999;
+$color-gray-lightest:#cccccc;
+
+
+// green theme
+$color-green-dark:#006100;
+$color-green:#008b00;
+$color-green-light:#4cad4c;
+$color-green-lighter:#7fc57f;
+$color-green-lightest:#b2dcb2;
+
+/*------------------
+ make sure if you have same variable name then it will clash
+ e.g: $colors exist in bootstrap variables too.
+ *-----------------*/
+$colors-kish: (
+//    color-theme: $color-theme,
+    
+	color-white: $color-white,
+	color-black: $color-black,
+    
+//    color-red-dark: $color-red-dark,
+//	color-red: $color-red,
+//    color-red-light: $color-red-light,
+//    color-red-lighter: $color-red-lighter,
+//    color-red-lightest: $color-red-lightest,
+	
+//	color-facebook: $color-facebook,
+//	color-twitter: $color-twitter,
+//	color-googleplus: $color-googleplus,
+//	color-linkedin: $color-linkedin,
+//	color-youtube: $color-youtube,
+//	color-instagram: $color-instagram,
+//	color-pinterest: $color-pinterest,
+//	color-flickr: $color-flickr,
+//	color-tumblr: $color-tumblr,
+//	color-foursquare: $color-foursquare,
+//	color-dribbble: $color-dribbble,
+//	color-vine: $color-vine,
+//	color-behance: $color-behance,
+//	color-github: $color-github,
+//	color-skype: $color-skype,
+//	color-snapchat: $color-snapchat,
+//	color-whatsapp: $color-whatsapp,
+
+	
+	color-gray-dark: $color-gray-dark,
+	color-gray: $color-gray,
+	color-gray-light: $color-gray-light,
+	color-gray-lighter: $color-gray-lighter,
+	color-gray-lightest: $color-gray-lightest,
+    
+//    color-green-dark: $color-green-dark,
+//    color-green: $color-green,
+//    color-green-light: $color-green-light,
+//    color-green-lighter: $color-green-lighter,
+//    color-green-lightest: $color-green-lightest,
+);
+
+$kish-grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+/*
+$rem-total 20 =5rem, 40=10rem, 80=20rem
+Below variables only works if $rem-spacing-increment: 25
+*/
+$rem-total: 5;
+$rem-spacing-start: 0;
+$rem-spacing-increment: 25;
+$rem-spacing-end: ($rem-spacing-increment*$rem-total)/(6.25); 
+
+/*
+utilities/_text-style.scss
+*/
+$mute-text-color: $color-gray;
+
+/*------------------
+_html-tags.scss
+--------------------*/
+$body-font-family: 'Lato', sans-serif;
+$body-font-size:1rem;
+$body-text-color: $color-black;
+$body-font-weight: normal;
+$body-line-height: 1.15rem;
+$body-background-color: $color_white;
+
+$font-weight-light: lighter;
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+
+$headings-margin-bottom: 0.5rem;
+$headings-font-family: inherit;
+$headings-font-weight: 500;
+$headings-line-height: 2.5rem;
+$headings-color: $color-theme;
+
+$h1-font-size: $body-font-size * 2.5 ;
+//$h2-font-size: $body-font-size * 2 ;
+$h2-font-size: 48px ;
+$h3-font-size: $body-font-size * 1.75 ;
+$h4-font-size: $body-font-size * 1.5 ;
+$h5-font-size: $body-font-size * 1.25 ;
+$h6-font-size: $body-font-size;
+
+$dt-font-weight: $font-weight-bold;
+
+$hr-border-color: rgba($color-black, .1);
+$hr-border-width: $border-width;
+$hr-margin-y: 1rem;
+
+$small-font-size: 80%;
+
+$mark-padding: .2em;
+$mark-bg: #fcf8e3;
+
+

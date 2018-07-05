@@ -1,0 +1,90 @@
+
+@each $breakpoint in map-keys($kish-grid-breakpoints) {
+  @include kish-media-breakpoint-up($breakpoint) {
+    
+    $counter-start: $rem-spacing-start;
+    $counter-stop: $rem-spacing-end; //20 goes till 5rem.
+    $counter-increment: $rem-spacing-increment;
+
+    $infix: kish-breakpoint-infix($breakpoint, $kish-grid-breakpoints);
+    @for $i from $counter-start through $counter-stop{ 
+    @each $prop, $abbrev in (margin: m, padding: p) 
+    {
+      
+        @if $counter-start > 0 and $counter-start < 99 
+          {
+  
+
+            .#{$abbrev}-0#{$counter-start}#{$infix} { #{$prop}: #{$counter-start/100}rem !important; }
+            .#{$abbrev}t-0#{$counter-start}#{$infix},
+            .#{$abbrev}y-0#{$counter-start}#{$infix} {
+              #{$prop}-top: #{$counter-start/100}rem !important;
+            }
+            .#{$abbrev}r-0#{$counter-start}#{$infix},
+            .#{$abbrev}x-0#{$counter-start}#{$infix} {
+              #{$prop}-right: #{$counter-start/100}rem !important;
+            }
+            .#{$abbrev}b-0#{$counter-start}#{$infix},
+            .#{$abbrev}y-0#{$counter-start}#{$infix} {
+              #{$prop}-bottom: #{$counter-start/100}rem !important;
+            }
+            .#{$abbrev}l-0#{$counter-start}#{$infix},
+            .#{$abbrev}x-0#{$counter-start}#{$infix} {
+              #{$prop}-left: #{$counter-start/100}rem !important;
+            }
+          
+            
+          }
+           @else 
+              {
+                
+            .#{$abbrev}-#{$counter-start}#{$infix} { #{$prop}: #{$counter-start/100}rem !important; }
+            .#{$abbrev}t-#{$counter-start}#{$infix},
+            .#{$abbrev}y-#{$counter-start}#{$infix} {
+              #{$prop}-top: #{$counter-start/100}rem !important;
+            }
+            .#{$abbrev}r-#{$counter-start}#{$infix},
+            .#{$abbrev}x-#{$counter-start}#{$infix} {
+              #{$prop}-right: #{$counter-start/100}rem !important;
+            }
+            .#{$abbrev}b-#{$counter-start}#{$infix},
+            .#{$abbrev}y-#{$counter-start}#{$infix} {
+              #{$prop}-bottom: #{$counter-start/100}rem !important;
+            }
+            .#{$abbrev}l-#{$counter-start}#{$infix},
+            .#{$abbrev}x-#{$counter-start}#{$infix} {
+              #{$prop}-left: #{$counter-start/100}rem !important;
+            }
+                
+              }
+      
+  
+    }
+  
+
+  
+    $counter-start : $counter-start + $counter-increment;
+    }
+
+      // Some special margin utils
+    .m-auto#{$infix} { margin: auto !important; }
+    .mt-auto#{$infix},
+    .my-auto#{$infix} {
+      margin-top: auto !important;
+    }
+    .mr-auto#{$infix},
+    .mx-auto#{$infix} {
+      margin-right: auto !important;
+    }
+    .mb-auto#{$infix},
+    .my-auto#{$infix} {
+      margin-bottom: auto !important;
+    }
+    .ml-auto#{$infix},
+    .mx-auto#{$infix} {
+      margin-left: auto !important;
+    }
+
+  }
+}
+  

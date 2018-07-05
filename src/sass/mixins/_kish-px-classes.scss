@@ -1,0 +1,12 @@
+/*
+This mixins produces classes for px,
+$arg3:99 - if third argument isnt set then default will be 99 and loop will produce till 0-99px 
+*/
+
+@mixin kish-px-classes($arg1, $arg2, $arg3:99){
+    @for $i from 1 through $arg3{ 
+
+        .#{$arg1}-#{$i} { #{$arg2}: #{$i/16}rem !important; }
+        
+    }
+}

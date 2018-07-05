@@ -58,36 +58,47 @@ componentDidMount() {
 }
   render() {
     return (
-      <div className='app'>
-        <header>
-            <div className='wrapper'>
-              <h1>Add Your Flights</h1>
+      <div className='container-fluid'>
+
+        <div className='row'>
+            <div className='col'>
+              {<h1 className='txt-ctr'>Notes</h1>}
             </div>
-        </header>
-        <div className='container'>
-          <section className='add-item'>
-              <form onSubmit={this.handleSubmit}>
-                <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={this.state.username} />
-                <input type="text" name="currentItem" placeholder="What are your flight name?" onChange={this.handleChange} value={this.state.currentItem} />
-                <button>Add Item</button>
-              </form>
-          </section>
-          <section className='display-item'>
-            <div className="wrapper">
-              <ul>
-                {this.state.items.map((item) => {
-                  return (
-                    <li key={item.id}>
-                      <h3>{}</h3>
-                      <p><b>{item.user}</b>&#39;s flight name is: {item.title}</p>
-                      <button onClick={() => this.removeItem(item.id)}>Remove Item</button>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          </section>
         </div>
+
+        <div className='container'>
+
+          <div className='row'>
+              <div className='col'></div>
+                <div className='col-md col-sm-12 p-050'>
+                  <div className='border-gray-lightest-1 radius-5 p-100'>
+                      <form onSubmit={this.handleSubmit}>
+                        <input type="text" name="username" placeholder="Heading" onChange={this.handleChange} value={this.state.username} className='w-100 my-100 txt-black border-btm-gray-lightest-1' />
+                        <input type="text" name="currentItem" placeholder="Content" onChange={this.handleChange} value={this.state.currentItem} className='w-100 my-100 txt-black border-btm-gray-lightest-1' />
+                        <button className='btn-default btn-black'>Add Item</button>
+                      </form>
+                  </div>
+            </div>
+            <div className='col'></div>
+          </div>
+
+          <div className='row'>
+          {this.state.items.map((item) => {
+            return (
+            <div className="col-md-4 col-sm-12 p-050">
+              <div className='border-gray-lightest-1 radius-5 p-050'>
+                      {/*item.id*/}
+                      {/*<p><b>{item.user}</b>&#39;s flight name is: {item.title}</p>*/}
+                      <p className='border-btm-gray-lightest-1 txt-ctr pb-050'><b>{item.user}</b></p>
+                      <p className='py-025'>{item.title}</p>
+                      <button className='mt-100 btn-default btn-gray-lightest' onClick={() => this.removeItem(item.id)}>Remove</button>
+              </div>
+            </div>
+            )})}
+          </div>
+
+        </div>
+
       </div>
     );
   }

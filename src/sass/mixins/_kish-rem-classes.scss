@@ -1,0 +1,42 @@
+/*
+This mixins produces classes for rem,
+$arg:20 - if third argument isnt set then default will be 20rem
+*/
+
+@mixin kish-rem-classes($arg1, $arg2, $arg3:20) {
+          @each $breakpoint in map-keys($kish-grid-breakpoints) {
+          @include kish-media-breakpoint-up($breakpoint) {
+            
+            $class-slug:$arg1;
+            $prop:$arg2;
+            $counter-start: $rem-spacing-start;
+            $counter-stop: $arg3; //20 goes till 5rem.
+            $counter-increment: $rem-spacing-increment;
+      
+            @for $i from $counter-start through $counter-stop{ 
+            
+            $infix: kish-breakpoint-infix($breakpoint, $kish-grid-breakpoints);
+                  @if $counter-start > 0 and $counter-start < 10 
+                    {
+            
+                    .#{$class-slug}-00#{$counter-start}#{$infix} { #{$prop}: #{$counter-start/100}rem !important; }
+                      
+                    }
+                  @else if $counter-start > 9 and $counter-start < 99 
+                    {
+            
+                    .#{$class-slug}-0#{$counter-start}#{$infix} { #{$prop}: #{$counter-start/100}rem !important; }
+                      
+                    }
+                  @else 
+                      {
+                        
+                    .#{$class-slug}-#{$counter-start}#{$infix} { #{$prop}: #{$counter-start/100}rem !important; }
+                        
+                      }
+            $counter-start : $counter-start + $counter-increment;
+            }
+
+    }
+  }
+}

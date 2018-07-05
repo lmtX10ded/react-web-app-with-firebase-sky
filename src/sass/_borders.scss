@@ -1,0 +1,52 @@
+$class-slug: border;
+
+//e.g .border-white-1
+
+@for $i from 1 through 5{
+	@each $name, $value in $colors-kish{
+                .#{$class-slug}-#{str_slice( $name, 7 )}-#{$i}
+                {
+                        border: #{$i}px solid $value !important;
+                }
+                .#{$class-slug}-top-#{str_slice( $name, 7 )}-#{$i}
+                {
+                        border-top: #{$i}px solid $value !important;
+                }
+                .#{$class-slug}-rgt-#{str_slice( $name, 7 )}-#{$i}
+                {
+                        border-right: #{$i}px solid $value !important;
+                }
+                .#{$class-slug}-btm-#{str_slice( $name, 7 )}-#{$i}
+                {
+                        border-bottom: #{$i}px solid $value !important;
+                }
+                .#{$class-slug}-lft-#{str_slice( $name, 7 )}-#{$i}
+                {
+                        border-left: #{$i}px solid $value !important;
+                }
+		}
+		.radius-#{$i}{
+			border-radius: #{$i}px !important;
+		}
+        .radius-top-lft-#{$i}{
+			border-top-left-radius: #{$i}px !important;
+		}
+        .radius-top-rgt-#{$i}{
+			border-top-right-radius: #{$i}px !important;
+		}
+        .radius-btm-rgt-#{$i}{
+			border-bottom-right-radius: #{$i}px !important;
+		}
+        .radius-btm-lft-#{$i}{
+			border-bottom-left-radius: #{$i}px !important;
+		}
+}
+
+.border-0, .border-none{ border: 0 !important; }
+.border-top-0    { border-top: 0 !important; }
+.border-right-0  { border-right: 0 !important; }
+.border-bottom-0 { border-bottom: 0 !important; }
+.border-left-0   { border-left: 0 !important; }
+.radius-circle {
+  border-radius: 50% !important;
+}

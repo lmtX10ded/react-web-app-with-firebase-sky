@@ -1,0 +1,52 @@
+@mixin txt-hide() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+@mixin txt-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@each $breakpoint in map-keys($kish-grid-breakpoints) {
+  @include kish-media-breakpoint-up($breakpoint) {
+    $infix: kish-breakpoint-infix($breakpoint, $kish-grid-breakpoints);
+
+    .txt-lft#{$infix},.txt-left#{$infix}     { text-align: left !important; }
+    .txt-rgt#{$infix},.txt-right#{$infix}    { text-align: right !important; }
+    .txt-ctr#{$infix},.txt-center#{$infix}   { text-align: center !important; }
+    .txt-jty#{$infix},.txt-justify#{$infix}  { text-align: justify !important }
+    .txt-hide#{$infix}                       { @include txt-hide(); }
+    .txt-mute#{$infix}                       { color: $mute-text-color !important; }
+    .txt-truncate#{$infix}                   { @include txt-truncate; }
+    .txt-italic#{$infix}                     { font-style: italic !important; }
+  }
+}
+
+/*
+.txt-025 .txt-025-sm .txt-100-xl ...  
+*/
+@include kish-rem-classes( txt, font-size, $rem-spacing-end);
+
+/*
+.txt-1 to txt-99 ...  
+px classes won't produce for breakpoints, coz it will make css to large
+*/
+@include kish-px-classes(txt, font-size, 5);
+
+/*
+lh-1 lh-2 ...
+*/
+@include kish-px-classes(txt, line-height, 5);
+
+/*
+.txt-white .txt-black ...
+*/
+@include kish-color-classes(txt, color);
+
+/*
+.bg-white .bg-black ...
+*/
+@include kish-color-classes(bg, background-color);
